@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hypertension Review ♡ Practice Test</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pink:#ff6fa5; --pink-d:#c92a6c; --pink-m:#e63e82; --pink-l:#ffd6e7; --pink-xl:#fff0f6;
+  --ink:#5a2a41; --ink-soft:#8a5470;
+  --mint:#d9f7e8; --mint-b:#3fbf8f; --mint-ink:#1f6b4d;
+  --rose:#ffe3e8; --rose-b:#ff6b81; --rose-ink:#9c2440;
+  --butter:#fff4c9; --butter-b:#f2b134; --butter-ink:#7a5410;
+  --card:#ffffff; --shadow:0 10px 30px rgba(255,111,165,.22);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; min-height:100vh; color:var(--ink);
+  font-family:'Quicksand','Nunito',ui-rounded,system-ui,-apple-system,'Segoe UI',sans-serif;
+  font-weight:600; line-height:1.5;
+  background:
+    radial-gradient(circle at 10% 8%, #ffe0ef 0 120px, transparent 121px),
+    radial-gradient(circle at 92% 22%, #ffe9f3 0 90px, transparent 91px),
+    linear-gradient(160deg,#fff5f9,#ffe3f0 55%,#ffd6ea);
+  background-attachment:fixed;
+}
+h1,h2,h3,.fred{font-family:'Fredoka','Quicksand',ui-rounded,system-ui,sans-serif; font-weight:600; margin:0}
+.float-layer{position:fixed; inset:0; pointer-events:none; overflow:hidden; z-index:0}
+.float-layer span{position:absolute; bottom:-40px; opacity:.55; animation:floatUp linear infinite; color:var(--pink)}
+@keyframes floatUp{
+  0%{transform:translateY(0) rotate(0deg); opacity:0}
+  10%{opacity:.6}
+  90%{opacity:.5}
+  100%{transform:translateY(-115vh) rotate(40deg); opacity:0}
+}
+.wrap{position:relative; z-index:1; max-width:760px; margin:0 auto; padding:18px 16px 60px}
+.topbar{display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:14px}
+.brand{display:flex; align-items:center; gap:8px; font-family:'Fredoka',sans-serif; font-size:1.05rem; color:var(--pink-d); cursor:pointer; background:none; border:0; padding:4px 6px; border-radius:12px}
+.brand:focus-visible,.btn:focus-visible,.opt:focus-within,summary:focus-visible,input[type=search]:focus-visible{outline:3px solid #ff9ec4; outline-offset:2px}
+.card{
+  background:var(--card); border:3px solid var(--pink-l); border-radius:28px;
+  box-shadow:var(--shadow); padding:22px 20px; position:relative;
+}
+.card + .card{margin-top:16px}
+.hidden{display:none !important}
+
+/* buttons */
+.btn{
+  font-family:'Fredoka',sans-serif; font-size:1.05rem; font-weight:500; letter-spacing:.2px;
+  border:0; border-radius:999px; padding:13px 26px; cursor:pointer; color:#fff;
+  background:linear-gradient(135deg,var(--pink-m),var(--pink-d));
+  box-shadow:0 6px 0 #a61f58, 0 10px 18px rgba(201,42,108,.25);
+  transition:transform .12s ease, box-shadow .12s ease, filter .12s;
+}
+.btn:hover{transform:translateY(-2px); filter:brightness(1.05)}
+.btn:active{transform:translateY(4px); box-shadow:0 2px 0 #a61f58}
+.btn[disabled]{background:#f2c4d6; box-shadow:0 6px 0 #e3a9c0; cursor:not-allowed; transform:none; filter:none; color:#fff}
+.btn.soft{background:#fff; color:var(--pink-d); border:3px solid var(--pink-l); box-shadow:0 5px 0 var(--pink-l)}
+.btn.soft:active{box-shadow:0 1px 0 var(--pink-l)}
+.btn.small{font-size:.9rem; padding:8px 16px; box-shadow:0 4px 0 #a61f58}
+.btn.soft.small{box-shadow:0 4px 0 var(--pink-l)}
+.row{display:flex; flex-wrap:wrap; gap:12px; align-items:center}
+.center{text-align:center; justify-content:center}
+
+/* home */
+.hero{text-align:center; padding:28px 18px 26px}
+.mascot{width:120px; height:120px; animation:bob 3s ease-in-out infinite; filter:drop-shadow(0 8px 10px rgba(255,111,165,.3))}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-8px) rotate(2deg)}}
+.hero h1{font-size:clamp(1.9rem,6vw,2.6rem); color:var(--pink-d); margin-top:6px}
+.hero h1 .sparkle{display:inline-block; animation:twinkle 2s ease-in-out infinite}
+@keyframes twinkle{0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(1.25) rotate(15deg)}}
+.hero p{color:var(--ink-soft); margin:8px auto 18px; max-width:460px}
+.chips{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:14px 0 20px}
+.chip{background:var(--pink-xl); border:2px dashed var(--pink); color:var(--pink-d); padding:4px 12px; border-radius:999px; font-size:.85rem}
+.toggle{display:inline-flex; align-items:center; gap:8px; margin:6px 0 16px; cursor:pointer; color:var(--ink-soft)}
+.toggle input{accent-color:var(--pink-m); width:20px; height:20px}
+.best{margin-top:16px; color:var(--ink-soft); font-size:.95rem}
+
+/* quiz */
+.qhead{display:flex; justify-content:space-between; align-items:center; gap:10px; margin-bottom:8px; font-family:'Fredoka',sans-serif; color:var(--pink-d)}
+.bar{height:16px; background:var(--pink-xl); border:2px solid var(--pink-l); border-radius:999px; overflow:hidden; margin-bottom:18px}
+.bar > div{height:100%; width:0; background:repeating-linear-gradient(45deg,#ff8fb8 0 12px,#ff6fa5 12px 24px); border-radius:999px; transition:width .4s ease}
+.qtext{font-size:1.15rem; font-weight:700; margin:0 0 6px; outline:none}
+.sata{display:inline-block; background:var(--butter); border:2px solid var(--butter-b); color:var(--butter-ink); border-radius:999px; font-size:.8rem; padding:2px 12px; margin:6px 0 4px}
+.opts{display:flex; flex-direction:column; gap:12px; margin:16px 0}
+.opt{
+  display:block; border:3px solid var(--pink-l); background:var(--pink-xl); border-radius:20px; padding:12px 14px;
+  cursor:pointer; transition:transform .12s, border-color .12s, background .12s;
+}
+.opt:hover{transform:translateY(-2px); border-color:var(--pink)}
+.opt.sel{border-color:var(--pink-m); background:#ffe1ee}
+.opt .line{display:flex; gap:12px; align-items:flex-start}
+.opt input{position:absolute; opacity:0; pointer-events:none}
+.mark{flex:none; width:26px; height:26px; border:3px solid var(--pink); background:#fff; margin-top:1px; display:grid; place-items:center; font-size:.85rem; color:#fff; transition:.15s}
+.mark.r{border-radius:50%} .mark.c{border-radius:8px}
+.opt.sel .mark{background:var(--pink-m); border-color:var(--pink-m)}
+.opt.sel .mark::after{content:'♥'}
+.opt .txt{flex:1}
+.opt .why{margin-top:10px; padding:10px 12px; border-radius:14px; background:rgba(255,255,255,.75); font-weight:600; font-size:.95rem}
+.opt .tag{display:inline-block; font-family:'Fredoka',sans-serif; font-weight:500; font-size:.8rem; letter-spacing:.6px; padding:1px 10px; border-radius:999px; margin-bottom:6px}
+.opts.locked .opt{cursor:default; transform:none}
+.opt.good{background:var(--mint); border-color:var(--mint-b)}
+.opt.good .tag{background:var(--mint-b); color:#fff}
+.opt.good .mark{background:var(--mint-b); border-color:var(--mint-b)} .opt.good .mark::after{content:'✓'}
+.opt.bad{background:var(--rose); border-color:var(--rose-b)}
+.opt.bad .tag{background:var(--rose-b); color:#fff}
+.opt.bad .mark{background:var(--rose-b); border-color:var(--rose-b)} .opt.bad .mark::after{content:'✕'}
+.opt.missed{background:var(--butter); border-color:var(--butter-b); border-style:dashed}
+.opt.missed .tag{background:var(--butter-b); color:#4a3200}
+.opt.missed .mark{border-color:var(--butter-b)}
+.opt.plain .tag{background:#eadde4; color:#6b4a5c}
+.banner{border-radius:20px; padding:12px 16px; font-family:'Fredoka',sans-serif; font-size:1.1rem; display:flex; gap:10px; align-items:center; margin-top:4px; animation:pop .35s ease}
+@keyframes pop{0%{transform:scale(.85); opacity:0}100%{transform:scale(1); opacity:1}}
+.banner.correct{background:var(--mint); color:var(--mint-ink); border:3px solid var(--mint-b)}
+.banner.partial{background:var(--butter); color:var(--butter-ink); border:3px solid var(--butter-b)}
+.banner.incorrect{background:var(--rose); color:var(--rose-ink); border:3px solid var(--rose-b)}
+.rationale{margin-top:12px; border:3px dashed var(--pink); background:var(--pink-xl); border-radius:20px; padding:14px 16px}
+.rationale h4{margin:0 0 4px; font-family:'Fredoka',sans-serif; color:var(--pink-d); font-weight:500}
+.rationale p{margin:0}
+.note{margin-top:10px; font-size:.9rem; color:var(--ink-soft); background:#fff; border:2px solid var(--pink-l); border-radius:14px; padding:8px 12px}
+.actions{display:flex; justify-content:space-between; align-items:center; gap:10px; margin-top:18px; flex-wrap:wrap}
+
+/* results */
+.ring{width:160px; height:160px; border-radius:50%; margin:6px auto 12px; display:grid; place-items:center;
+  background:conic-gradient(var(--pink-m) calc(var(--p)*1%), var(--pink-l) 0)}
+.ring > div{width:124px; height:124px; border-radius:50%; background:#fff; display:grid; place-items:center; text-align:center}
+.ring b{font-family:'Fredoka',sans-serif; font-size:2rem; color:var(--pink-d); display:block; line-height:1}
+.ring small{color:var(--ink-soft)}
+.res-list{list-style:none; padding:0; margin:14px 0 0; display:flex; flex-direction:column; gap:8px}
+.res-list li{display:flex; gap:10px; align-items:center; padding:8px 12px; border-radius:16px; border:2px solid var(--pink-l); background:var(--pink-xl); font-size:.92rem}
+.pill{flex:none; font-family:'Fredoka',sans-serif; font-size:.75rem; padding:2px 10px; border-radius:999px; color:#fff}
+.pill.correct{background:var(--mint-b); color:#0e3b2a} .pill.partial{background:var(--butter-b); color:#4a3200} .pill.incorrect{background:var(--rose-b)}
+.res-list .q{flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+
+/* study */
+.search{width:100%; border:3px solid var(--pink-l); border-radius:999px; padding:12px 18px; font:inherit; color:var(--ink); background:#fff; margin:6px 0 16px}
+details{border:3px solid var(--pink-l); border-radius:22px; background:#fff; margin-bottom:12px; overflow:hidden}
+details[open]{border-color:var(--pink)}
+summary{cursor:pointer; padding:14px 16px; list-style:none; display:flex; gap:10px; align-items:flex-start; font-weight:700}
+summary::-webkit-details-marker{display:none}
+summary .n{flex:none; background:var(--pink-m); color:#fff; font-family:'Fredoka',sans-serif; border-radius:999px; min-width:34px; height:34px; display:grid; place-items:center; font-size:.9rem}
+.sbody{padding:0 16px 16px}
+.sopt{padding:8px 12px; border-radius:14px; margin:8px 0; border:2px solid var(--pink-l); background:var(--pink-xl)}
+.sopt.ok{background:var(--mint); border-color:var(--mint-b)}
+.sopt small{display:block; margin-top:4px; font-weight:600; color:var(--ink-soft)}
+.sopt.ok small{color:var(--mint-ink)}
+.empty{text-align:center; color:var(--ink-soft); padding:20px}
+
+.confetti{position:fixed; top:-30px; z-index:5; pointer-events:none; animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg); opacity:.8}}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none !important; transition:none !important}
+  .float-layer{display:none}
+}
+@media (max-width:480px){ .card{padding:18px 14px; border-radius:24px} .btn{padding:12px 20px} }
+</style>
+</head>
+<body>
+<div class="float-layer" id="floaty" aria-hidden="true"></div>
+
+<div class="wrap">
+  <div class="topbar">
+    <button class="brand" id="homeBtn" aria-label="Go to home">🎀 Hypertension Review</button>
+    <button class="btn soft small" id="studyTop">📖 Study mode</button>
+  </div>
+
+  <!-- HOME -->
+  <section id="home" class="card hero">
+    <svg class="mascot" viewBox="0 0 120 120" aria-hidden="true">
+      <ellipse cx="42" cy="26" rx="11" ry="24" fill="#fff" stroke="#ff8fb8" stroke-width="3"/>
+      <ellipse cx="42" cy="30" rx="5" ry="15" fill="#ffc2d9"/>
+      <ellipse cx="78" cy="26" rx="11" ry="24" fill="#fff" stroke="#ff8fb8" stroke-width="3" transform="rotate(8 78 26)"/>
+      <ellipse cx="78" cy="30" rx="5" ry="15" fill="#ffc2d9" transform="rotate(8 78 30)"/>
+      <circle cx="60" cy="72" r="38" fill="#fff" stroke="#ff8fb8" stroke-width="3"/>
+      <path d="M38 50 Q60 28 82 50 Q60 42 38 50Z" fill="#fff" stroke="#ff8fb8" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M60 47 c-3-4-9-1-6 3 l6 5 l6-5 c3-4-3-7-6-3z" fill="#ff6fa5" transform="translate(0,-6) scale(1)"/>
+      <circle cx="47" cy="72" r="5" fill="#5a2a41"/><circle cx="73" cy="72" r="5" fill="#5a2a41"/>
+      <circle cx="48.8" cy="70.2" r="1.7" fill="#fff"/><circle cx="74.8" cy="70.2" r="1.7" fill="#fff"/>
+      <ellipse cx="38" cy="82" rx="7" ry="4.5" fill="#ffb3cf"/><ellipse cx="82" cy="82" rx="7" ry="4.5" fill="#ffb3cf"/>
+      <path d="M54 82 Q57 87 60 82 Q63 87 66 82" fill="none" stroke="#5a2a41" stroke-width="2.6" stroke-linecap="round"/>
+    </svg>
+    <h1>Hypertension Review <span class="sparkle">✨</span></h1>
+    <p>A cozy 20-question practice test with a rationale for every answer. You've got this, future nurse! ♡</p>
+    <div class="chips">
+      <span class="chip">20 questions</span><span class="chip">5 select-all-that-apply</span><span class="chip">rationales included</span>
+    </div>
+    <label class="toggle"><input type="checkbox" id="shuffle"> Shuffle question order 🔀</label>
+    <div class="row center">
+      <button class="btn" id="startBtn">Start practice test 🌸</button>
+      <button class="btn soft" id="studyBtn">Study mode 📖</button>
+    </div>
+    <div class="best" id="best"></div>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="quiz" class="card hidden" aria-live="polite">
+    <div class="qhead"><span id="qcount">Question 1 of 20</span><span id="tally">♡ 0</span></div>
+    <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" id="barOuter"><div id="barIn"></div></div>
+    <h2 class="qtext" id="qtext" tabindex="-1"></h2>
+    <div id="sata"></div>
+    <div class="opts" id="opts"></div>
+    <div id="feedback"></div>
+    <div class="actions">
+      <button class="btn soft small" id="quitBtn">Exit</button>
+      <button class="btn" id="checkBtn" disabled>Check answer</button>
+      <button class="btn hidden" id="nextBtn">Continue →</button>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section id="results" class="card hidden center">
+    <h2 style="color:var(--pink-d);font-size:1.7rem" id="resTitle">All done!</h2>
+    <div class="ring" id="ring" style="--p:0"><div><span><b id="resPct">0%</b><small id="resPts"></small></span></div></div>
+    <p id="resMsg" style="margin:4px 0 14px"></p>
+    <div class="row center">
+      <button class="btn" id="retryBtn">Try again 🔁</button>
+      <button class="btn soft" id="missedBtn">Retake missed 🎯</button>
+      <button class="btn soft" id="resStudy">Study mode 📖</button>
+    </div>
+    <ul class="res-list" id="resList" style="text-align:left"></ul>
+  </section>
+
+  <!-- STUDY -->
+  <section id="study" class="card hidden">
+    <h2 style="color:var(--pink-d);font-size:1.5rem">Study mode 📖</h2>
+    <p style="margin:4px 0 0;color:var(--ink-soft)">Tap a question to see the right answer(s) and every rationale. Green = correct ✓</p>
+    <input class="search" id="search" type="search" placeholder="Search a topic… (e.g. stroke, sodium, ECG) 🔍" aria-label="Search questions">
+    <div id="studyList"></div>
+    <div class="row center" style="margin-top:12px"><button class="btn" id="studyStart">Take the practice test 🌸</button></div>
+  </section>
+</div>
+
+<script>
+/* ---------- QUESTION DATA (rationales kept exactly as written) ---------- */
+const S=(q,o,c)=>({type:'single',q,opts:o.map((x,i)=>({t:x[0],r:x[1],ok:i===c}))});
+const M=(q,o,c,r,note)=>({type:'multi',q,r,note,opts:o.map((t,i)=>({t,ok:c.includes(i)}))});
+
+const Q=[
+/* 1 */ S("A hypertensive patient is seeking to prevent target organ damage. Which lifestyle change would most effectively support this goal?",[
+  ["Maintaining a regular exercise routine","Regular exercise is crucial for reducing hypertension, which in turn helps lower the risk of damage to various organs."],
+  ["Eliminating all dietary carbohydrates","Eliminating carbohydrates is not effective or necessary for protecting target organs from hypertension."],
+  ["Smoking high-nicotine cigarettes","Smoking increases blood pressure and exacerbates the risk of organ damage associated with hypertension."],
+  ["Substituting sugar with artificial sweeteners","This substitution may not significantly impact hypertension-related organ damage prevention."]],0),
+/* 2 */ S("If a patient with stage 2 hypertension is found post-fall with blood pressure of 185/125 mm Hg and confusion, what should be the primary nursing concern?",[
+  ["Potential for further falls.","While fall risk is important, it does not take precedence in the immediate stage."],
+  ["Assessing for signs of a stroke.","Confusion and elevated blood pressure can indicate a stroke, requiring urgent assessment and intervention."],
+  ["Ensuring safety through a restraint.","Restraints should not be a primary concern and require careful consideration and assessment.."],
+  ["Dehydration management.","This is not a primary concern unless additional clinical signs indicate this need."]],1),
+/* 3 */ S("A patient with blood pressure readings of 188/122 mm Hg and vision changes is suspected of having a hypertensive emergency. Which diagnostic test should the nurse prioritize?",[
+  ["Urinalysis.","Though useful for renal assessment, it does not directly address immediate neurological concerns."],
+  ["Electrocardiogram (ECG).","While an ECG is important, it specifically addresses cardiac issues."],
+  ["Complete blood count (CBC).","CBC provides general health status but does not specifically address severe hypertension implications."],
+  ["Computed tomography (CT) scan of the head.","Patients presenting with vision changes and severe hypertension may require a CT scan to assess for stroke."]],3),
+/* 4 */ M("A patient is a 40-year-old African American with a BMI of 32 and reports consuming a high sodium diet. Which considerations for hypertension management are most appropriate for this patient? (Select all that apply)",[
+  "Monitor for early onset organ damage such as kidney disease.",
+  "Increase potassium intake through dietary changes after evaluating potassium levels.",
+  "Recommend avoiding all dietary fat.",
+  "Suggest reducing sodium consumption and implementing a low-sodium diet.",
+  "Consider higher sensitivity to antihypertensive medications like ACE inhibitors.",
+  "Warn against the use of diuretics in this population."],[0,1,3,4],
+  "African Americans often experience earlier hypertension complications and may have reduced sensitivity to ACE inhibitors. Dietary changes, organ monitoring, and potassium intake are valid considerations, while indiscriminate warnings (e.g., against diuretics) or generic strategies like 'avoiding all fat' are less evidence-based."),
+/* 5 */ S("Which lifestyle intervention is most likely to directly reduce cardiac output in a hypertensive patient?",[
+  ["Increasing daily caffeine intake","Caffeine can transiently increase cardiac output and blood pressure."],
+  ["Fasting regularly","Fasting may not have a direct or consistent effect on cardiac output."],
+  ["Utilizing a low-fat diet","While helpful for overall heart health, a low-fat diet specifically targets weight and cholesterol management rather than cardiac output."],
+  ["Reducing daily alcohol consumption","Lowering alcohol intake can help reduce cardiac output and decrease blood pressure."]],3),
+/* 6 */ S("A patient presents with a blood pressure reading of 182/122 mm Hg and reports a severe headache and blurred vision. What is the nurse's most appropriate first action?",[
+  ["Reassess the blood pressure in 15 minutes.","While reassessment is important, immediate actions are required in this situation given the potential for acute organ damage."],
+  ["Administer an antihypertensive medication orally.","Oral antihypertensives may not act quickly enough; assessment of organ damage is a priority before specific treatment."],
+  ["Administer oxygen therapy.","Oxygen therapy is not indicated unless the patient is experiencing respiratory distress or hypoxia."],
+  ["Initiate continuous cardiac monitoring and assess for organ damage.","These actions address the urgency of potential organ damage associated with a hypertensive crisis."]],3),
+/* 7 */ M("Which of the following lab results and clinical findings could indicate complications of untreated hypertension? (Select all that apply)",[
+  "Hypoglycemia observed during a fasting blood sugar test.",
+  "ST-elevations on ECG indicating myocardial infarction.",
+  "Elevated serum creatinine indicating kidney damage.",
+  "Papilledema noted during a retinal exam.",
+  "Lung consolidation noted on chest X-ray.",
+  "Cerebrovascular accident confirmed on brain imaging.",
+  "Elevated liver enzymes indicating liver damage."],[1,2,3,5],
+  "Untreated hypertension can lead to target-organ damage including kidney failure (elevated creatinine), myocardial infarction (ECG changes), visual problems (papilledema), and cerebrovascular accidents (stroke). Hypoglycemia and lung consolidation are not associated directly with hypertension."),
+/* 8 */ S("Which medication class is likely to be used as an initial intervention in managing a hypertensive emergency, and what is a key nursing consideration for its use?",[
+  ["Calcium channel blockers; ensure IV availability for rapid effect.","Calcium channel blockers like nicardipine are used intravenously in acute settings for quick blood pressure control."],
+  ["Beta blockers; monitor heart rate for bradycardia.","While beta blockers help reduce blood pressure, they aren't the priority in acute emergencies."],
+  ["Diuretics; monitor for electrolyte imbalances.","Diuretics are more commonly used for fluid volume issues rather than the initial action in a hypertensive emergency."],
+  ["ACE inhibitors; observe for cough development.","ACE inhibitors can be used, but monitoring for cough is more relevant for chronic management."]],0),
+/* 9 */ S("Which nursing assessment is crucial before administering intravenous antihypertensive medication for a hypertensive crisis?",[
+  ["Liver enzyme tests.","Liver enzyme levels do not directly affect antihypertensive medication administration."],
+  ["Accurate blood pressure measurement.","Specific and accurate blood pressure measurements guide dosage and administration timing for intravenous antihypertensives."],
+  ["Echocardiogram results.","An echocardiogram can reflect cardiac issues yet not immediately required ahead of IV antihypertensives."],
+  ["Fasting blood glucose level.","Blood glucose can be crucial, primarily if diabetes is involved, but is not an urgent premedication check for antihypertensives."]],1),
+/* 10 */ S("A patient with a hypertensive urgency reports adherence to medication but continues to present with high blood pressure. What is the best nursing intervention?",[
+  ["Refer the patient for surgical intervention.","Surgery is typically not indicated or helpful for hypertensive urgency."],
+  ["Discuss medication side effects with the patient.","Side effects are important to address but may not directly resolve blood pressure control issues."],
+  ["Review the patient's medication intake schedule for adherence.","Assessment of schedule adherence can identify if medications are being correctly taken, a potential cause of poor control."],
+  ["Instruct the patient to increase physical activity.","While exercise can help long-term, it does not address immediate hypertensive urgency."]],2),
+/* 11 */ S("A patient diagnosed with secondary hypertension related to kidney issues is considering lifestyle interventions. What dietary change would a nurse most likely recommend?",[
+  ["Switching to a high-protein, low-carbohydrate diet","This type of diet may not specifically target hypertension management related to kidney issues."],
+  ["Consuming more processed foods for convenience","Processed foods are typically high in sodium, which can worsen hypertension."],
+  ["Lowering salt intake to under 2,300 mg per day","Limiting salt intake can help manage hypertension, particularly in patients with kidney issues."],
+  ["Increase in dietary potassium and sodium","An increase in sodium intake can exacerbate hypertension in kidney-related conditions."]],2),
+/* 12 */ S("A patient with hypertension opts to incorporate lifestyle changes to manage their condition. Which of the following modifications would most directly decrease systemic vascular resistance?",[
+  ["Engaging in regular aerobic exercise","Regular aerobic exercise helps to lower systemic vascular resistance by improving blood vessel function."],
+  ["Increasing intake of saturated fats","Saturated fats can contribute to arterial stiffness, increasing systemic vascular resistance."],
+  ["Increasing sodium intake","Increasing sodium intake can increase blood pressure by causing fluid retention."],
+  ["Switching from complex to simple carbohydrates","This dietary change has minimal direct effect on systemic vascular resistance."]],0),
+/* 13 */ M("Which of the following patient factors are considered nonmodifiable risk factors for hypertension? (Select all that apply)",[
+  "Obesity","Age","Smoking history","Ethnicity","Excess alcohol use","Sedentary lifestyle","Family history of hypertension"],[1,3,6],
+  "Nonmodifiable risk factors include those that cannot be controlled or changed by the patient, such as age, family history, and ethnicity. Modifiable risk factors include behaviors that can be altered, such as obesity, smoking, and physical inactivity."),
+/* 14 */ S("What is an immediate nursing consideration when monitoring a patient receiving IV antihypertensive therapy for hypertensive crisis?",[
+  ["Check for orthostatic hypotension hourly.","Orthostatic hypotension can delineate treatment effect but is not feasible for hourly checks."],
+  ["Ensure IV site integrity and observe for signs of thrombophlebitis.","IV integrity is crucial for efficacy and safety while administrating IV antihypertensives."],
+  ["Monitor blood glucose levels regularly.","Blood glucose fluctuations are not directly a primary concern unless related to diabetes management."],
+  ["Encourage increased fluid oral intake.","Fluid intake changes need more care and are not directly related to immediate IV antihypertensive management."]],1),
+/* 15 — answer key corrected: every pair is right except 118/79 */ M("A nursing student is reviewing blood pressure measurements for a 14-year-old patient. Which values are correctly matched to their corresponding BP categories? (Select all that apply)",[
+  "118/79 mm Hg - Stage 2 Hypertension",
+  "140/90 mm Hg - Stage 2 Hypertension",
+  "135/85 mm Hg - Stage 1 Hypertension",
+  "180/130 mm Hg - Hypertensive Crisis",
+  "112/76 mm Hg - Expected Blood Pressure",
+  "120/78 mm Hg - Elevated"],[1,2,3,4,5],
+  "Understanding accurate blood pressure categories is critical for identifying and managing hypertension. Correct matches are based on guidelines provided by AHA (e.g., 140/90 = Stage 2 Hypertension, 120/78 = Elevated). Incorrect classifications like 118/79 = Stage 2 should be avoided.",
+  "Answer key corrected: 140/90, 135/85, 180/130, 112/76 and 120/78 are all matched correctly. Only 118/79 is wrong (that reading is in the expected range, not Stage 2)."),
+/* 16 */ S("A hypertensive crisis patient has shortness of breath and a blood pressure of 192/128 mm Hg. What is the priority nursing action?",[
+  ["Elevate the patient's head to reduce blood pressure.","Elevation alone is insufficient as a sole intervention for the complex status associated with hypertensive crisis."],
+  ["Assess for potential cardiac or pulmonary complications.","Considering shortness of breath, assessing for underlying cardiac or pulmonary causes should be prioritized."],
+  ["Administer antihypertensive medication as prescribed.","Lowering blood pressure is important, but assessing respiratory function may take priority due to immediate life threat."],
+  ["Initiate high-flow oxygen therapy.","High-flow oxygen is not routinely necessary unless there are signs of severe hypoxia."]],1),
+/* 17 */ S("A patient arrives at the emergency department with a blood pressure of 195/130 mm Hg, reporting a severe headache, blurred vision, and chest tightness. Which of the following is the most appropriate immediate nursing intervention?",[
+  ["Encourage the patient to perform deep breathing exercises and recheck their blood pressure in one hour.","While relaxation techniques may help over time, they are not the appropriate first-line intervention during a hypertensive crisis with signs of target organ damage."],
+  ["Encourage the patient to drink water and restrict sodium intake starting immediately.","Although modifying sodium intake is important for long-term management of hypertension, it is not an emergency intervention during a hypertensive crisis."],
+  ["Administer a rapid-acting antihypertensive medication as prescribed and continuously monitor the patient's blood pressure.","A hypertensive crisis with symptoms of target organ damage, such as headache, blurred vision, and chest discomfort, is a medical emergency requiring immediate blood pressure reduction and continuous monitoring."],
+  ["Advise the patient to schedule an appointment with their primary care provider for follow-up evaluation.","A delayed follow-up is not appropriate in a hypertensive crisis as it necessitates immediate medical attention to prevent severe complications."]],2),
+/* 18 */ S("A patient with Stage 1 hypertension is advised to adopt the Mediterranean diet. Which of the following indicates correct application of this dietary change?",[
+  ["Increasing consumption of processed meats","The diet encourages limiting processed meats."],
+  ["Reducing intake of fruits and vegetables","The Mediterranean diet emphasizes high intake of fruits and vegetables."],
+  ["Using olive oil as a primary fat source","Olive oil is a staple in the Mediterranean diet, providing healthy monounsaturated fats."],
+  ["Avoiding fish and opting for red meat","The Mediterranean diet recommends fish over red meat."]],2),
+/* 19 */ M("What are appropriate interventions for a patient diagnosed with Stage 2 hypertension and a history of coronary artery disease? (Select all that apply)",[
+  "Instruct the patient to avoid all physical activity to prevent exertion.",
+  "Advise the patient to incorporate extreme intermittent fasting into their daily routine.",
+  "Encourage a Mediterranean-style diet emphasizing olive oil and vegetables.",
+  "Implement a low-sodium diet.",
+  "Educate the patient about weight management and smoking cessation.",
+  "Administer prescribed beta-blockers to reduce heart rate."],[2,3,4,5],
+  "Interventions for Stage 2 hypertension with a cardiac history focus on reducing modifiable risk factors and adhering to prescribed therapies, such as beta-blockers for heart rate control and lifestyle modifications like low-sodium and Mediterranean-style diets. Avoiding all activity or extreme measures like fasting is not appropriate."),
+/* 20 */ S("Which lifestyle change should the nurse prioritize in patient education for a patient with hypertension to significantly reduce blood pressure levels?",[
+  ["Increase water intake.","Hydration alone won't significantly impact blood pressure."],
+  ["Adopt a Mediterranean-style eating plan.","The Mediterranean diet emphasizes heart-healthy foods known to help reduce blood pressure."],
+  ["Increase protein consumption.","Increasing protein alone does not target hypertension management effectively."],
+  ["Focus on relaxation exercises.","Relaxation can manage stress-related blood pressure changes but not primary hypertension."]],1)
+];
+
+/* ---------- helpers ---------- */
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const KEY='htn_review_best_v1';
+function getBest(){try{return JSON.parse(localStorage.getItem(KEY)||'null')}catch(e){return null}}
+function setBest(v){try{localStorage.setItem(KEY,JSON.stringify(v))}catch(e){}}
+
+/* floating decorations */
+(function(){
+  const bits=['♡','✿','✦','☁','♥','❀','✧'];
+  const L=$('#floaty'); if(reduce) return;
+  for(let i=0;i<16;i++){
+    const s=document.createElement('span');
+    s.textContent=bits[i%bits.length];
+    s.style.left=(Math.random()*100)+'vw';
+    s.style.fontSize=(14+Math.random()*26)+'px';
+    s.style.animationDuration=(14+Math.random()*16)+'s';
+    s.style.animationDelay=(-Math.random()*20)+'s';
+    L.appendChild(s);
+  }
+})();
+
+/* ---------- state ---------- */
+let order=[], pos=0, res=[], checked=false, lastRunAll=true;
+const screens=['home','quiz','results','study'];
+function show(id){
+  screens.forEach(s=>$('#'+s).classList.toggle('hidden',s!==id));
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function shuffled(a){const b=a.slice();for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]]}return b}
+
+function updateBest(){
+  const b=getBest();
+  $('#best').textContent=b?`🏆 Best score: ${b.pct}% (${b.pts} / ${b.total})`:'Your best score will show up here ♡';
+}
+
+function start(list,isAll){
+  lastRunAll=isAll;
+  order=(isAll && !$('#shuffle').checked)?list.slice():shuffled(list);
+  if(isAll && !$('#shuffle').checked) order=list.slice();
+  pos=0; res=new Array(order.length).fill(null);
+  show('quiz'); renderQ();
+}
+
+/* ---------- quiz ---------- */
+function renderQ(){
+  checked=false;
+  const q=Q[order[pos]];
+  $('#qcount').textContent=`Question ${pos+1} of ${order.length}`;
+  const pts=res.reduce((a,r)=>a+(r?(r.status==='correct'?1:r.status==='partial'?.5:0):0),0);
+  $('#tally').textContent='♡ '+pts;
+  $('#barIn').style.width=(pos/order.length*100)+'%';
+  $('#barOuter').setAttribute('aria-valuenow',Math.round(pos/order.length*100));
+  $('#qtext').textContent=q.q;
+  $('#sata').innerHTML=q.type==='multi'?'<span class="sata">✿ Select all that apply</span>':'';
+  const box=$('#opts'); box.classList.remove('locked'); box.innerHTML='';
+  const kind=q.type==='multi'?'checkbox':'radio';
+  q.opts.forEach((o,i)=>{
+    const lab=document.createElement('label'); lab.className='opt'; lab.dataset.i=i;
+    lab.innerHTML=`<div class="line"><input type="${kind}" name="o" value="${i}"><span class="mark ${q.type==='multi'?'c':'r'}"></span><span class="txt">${esc(o.t)}</span></div><div class="extra"></div>`;
+    box.appendChild(lab);
+  });
+  $('#feedback').innerHTML='';
+  $('#checkBtn').classList.remove('hidden'); $('#checkBtn').disabled=true;
+  $('#nextBtn').classList.add('hidden');
+  $('#nextBtn').textContent=(pos===order.length-1)?'See my results 🎀':'Continue →';
+  $('#qtext').focus({preventScroll:true});
+}
+$('#opts').addEventListener('change',e=>{
+  if(checked) return;
+  const inputs=[...document.querySelectorAll('#opts input')];
+  inputs.forEach(inp=>inp.closest('.opt').classList.toggle('sel',inp.checked));
+  $('#checkBtn').disabled=!inputs.some(i=>i.checked);
+});
+
+$('#checkBtn').addEventListener('click',()=>{
+  if(checked) return; checked=true;
+  const q=Q[order[pos]];
+  const sel=[...document.querySelectorAll('#opts input:checked')].map(i=>+i.value);
+  const total=q.opts.filter(o=>o.ok).length;
+  const hits=sel.filter(i=>q.opts[i].ok).length, wrong=sel.length-hits;
+  let status;
+  if(hits===total && wrong===0) status='correct';
+  else if(q.type==='multi' && hits>wrong) status='partial';
+  else status='incorrect';
+  res[pos]={status,sel};
+  const box=$('#opts'); box.classList.add('locked');
+  document.querySelectorAll('#opts input').forEach(i=>i.disabled=true);
+  document.querySelectorAll('#opts .opt').forEach(lab=>{
+    const i=+lab.dataset.i, o=q.opts[i], picked=sel.includes(i);
+    lab.classList.remove('sel');
+    let cls='plain', tag='';
+    if(q.type==='single'){
+      if(o.ok){cls='good';tag='CORRECT'+(picked?' · my answer':'')}
+      else {cls=picked?'bad':'plain'; tag='INCORRECT'+(picked?' · my answer':'')}
+      lab.querySelector('.extra').innerHTML=`<div class="why"><span class="tag">${tag}</span><br>${esc(o.r)}</div>`;
+    } else {
+      if(o.ok&&picked){cls='good';tag='✓ You got this one'}
+      else if(o.ok&&!picked){cls='missed';tag='Should be selected'}
+      else if(!o.ok&&picked){cls='bad';tag='Not correct'}
+      if(tag) lab.querySelector('.extra').innerHTML=`<div class="tag" style="margin-top:8px">${tag}</div>`;
+    }
+    lab.classList.add(cls);
+    if(picked) lab.querySelector('.mark').style.boxShadow='0 0 0 3px #fff, 0 0 0 5px rgba(90,42,65,.35)';
+  });
+  const msgs={correct:['Yay, correct! ✨','🎉'],partial:[`Partially correct, so close! You found ${hits} of ${total} 🌸`,'🌼'],incorrect:["Oopsie! Let's learn from this ♡",'💭']};
+  let html=`<div class="banner ${status}"><span>${msgs[status][1]}</span><span>${msgs[status][0]}</span></div>`;
+  if(q.type==='multi'){
+    html+=`<div class="rationale"><h4>Rationale</h4><p>${esc(q.r)}</p></div>`;
+    if(q.note) html+=`<div class="note">📝 ${esc(q.note)}</div>`;
+  }
+  $('#feedback').innerHTML=html;
+  const pts=res.reduce((a,r)=>a+(r?(r.status==='correct'?1:r.status==='partial'?.5:0):0),0);
+  $('#tally').textContent='♡ '+pts;
+  $('#barIn').style.width=((pos+1)/order.length*100)+'%';
+  $('#checkBtn').classList.add('hidden'); $('#nextBtn').classList.remove('hidden');
+  setTimeout(()=>$('#feedback').scrollIntoView({behavior:reduce?'auto':'smooth',block:'nearest'}),60);
+  $('#nextBtn').focus({preventScroll:true});
+});
+
+$('#nextBtn').addEventListener('click',()=>{
+  if(pos<order.length-1){pos++;renderQ();window.scrollTo({top:0,behavior:'smooth'})}
+  else finish();
+});
+
+/* ---------- results ---------- */
+function finish(){
+  const total=order.length;
+  const pts=res.reduce((a,r)=>a+(r.status==='correct'?1:r.status==='partial'?.5:0),0);
+  const pct=Math.round(pts/total*100);
+  $('#resPct').textContent=pct+'%';
+  $('#resPts').textContent=`${pts} / ${total} pts`;
+  $('#ring').style.setProperty('--p',pct);
+  const m=pct>=90?['You did it! ✨','Absolutely glowing! You really know your hypertension.']:
+          pct>=75?['Great job! 🌸','So close to perfect, superstar! A quick look at the missed ones and you\'re set.']:
+          pct>=50?['Nice start! 🌷','You\'re blooming. Review the rationales and try again.']:
+                  ['Keep going! 💗','Every nurse starts somewhere. Use study mode, then retry.'];
+  $('#resTitle').textContent=m[0]; $('#resMsg').textContent=m[1];
+  const lab={correct:'Correct',partial:'Partial',incorrect:'Missed'};
+  $('#resList').innerHTML=order.map((qi,i)=>`<li><span class="pill ${res[i].status}">${lab[res[i].status]}</span><span class="q">Q${qi+1}. ${esc(Q[qi].q)}</span></li>`).join('');
+  const missed=res.filter(r=>r.status!=='correct').length;
+  $('#missedBtn').classList.toggle('hidden',missed===0);
+  if(lastRunAll){const b=getBest(); if(!b||pct>b.pct) setBest({pct,pts,total})}
+  updateBest(); show('results');
+  if(pct>=75) confetti();
+}
+function confetti(){
+  if(reduce) return;
+  const bits=['💗','🌸','✨','🎀','💖','🌷'];
+  for(let i=0;i<32;i++){
+    const s=document.createElement('span'); s.className='confetti';
+    s.textContent=bits[i%bits.length];
+    s.style.left=(Math.random()*100)+'vw';
+    s.style.fontSize=(16+Math.random()*18)+'px';
+    s.style.animationDuration=(2.5+Math.random()*2.5)+'s';
+    s.style.animationDelay=(Math.random()*.8)+'s';
+    document.body.appendChild(s);
+    setTimeout(()=>s.remove(),6500);
+  }
+}
+
+/* ---------- study mode ---------- */
+function renderStudy(filter=''){
+  const f=filter.trim().toLowerCase();
+  const items=Q.map((q,i)=>({q,i})).filter(({q})=>{
+    if(!f) return true;
+    return (q.q+' '+q.opts.map(o=>o.t+' '+(o.r||'')).join(' ')+' '+(q.r||'')).toLowerCase().includes(f);
+  });
+  if(!items.length){$('#studyList').innerHTML='<div class="empty">No matches found 🌸 Try another word!</div>';return}
+  $('#studyList').innerHTML=items.map(({q,i})=>{
+    const opts=q.opts.map(o=>`<div class="sopt ${o.ok?'ok':''}">${o.ok?'✓ ':''}${esc(o.t)}${q.type==='single'?`<small>${esc(o.r)}</small>`:''}</div>`).join('');
+    const shared=q.type==='multi'?`<div class="rationale"><h4>Rationale</h4><p>${esc(q.r)}</p></div>${q.note?`<div class="note">📝 ${esc(q.note)}</div>`:''}`:'';
+    return `<details><summary><span class="n">${i+1}</span><span>${esc(q.q)}</span></summary><div class="sbody">${q.type==='multi'?'<span class="sata">✿ Select all that apply</span>':''}${opts}${shared}</div></details>`;
+  }).join('');
+}
+$('#search').addEventListener('input',e=>renderStudy(e.target.value));
+
+/* ---------- wiring ---------- */
+const all=()=>Q.map((_,i)=>i);
+function goHome(){updateBest();show('home')}
+function openStudy(){$('#search').value='';renderStudy();show('study')}
+$('#homeBtn').onclick=goHome;
+$('#startBtn').onclick=()=>start(all(),true);
+$('#studyBtn').onclick=openStudy; $('#studyTop').onclick=openStudy; $('#resStudy').onclick=openStudy;
+$('#studyStart').onclick=()=>start(all(),true);
+$('#quitBtn').onclick=goHome;
+$('#retryBtn').onclick=()=>start(all(),true);
+$('#missedBtn').onclick=()=>{
+  const missed=order.filter((qi,i)=>res[i].status!=='correct');
+  if(missed.length) start(missed,false);
+};
+updateBest();
+</script>
+</body>
+</html>
